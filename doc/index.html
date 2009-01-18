@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="fr-fr">
+<head>
+
+  
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+
+
+  
+  <link rel="stylesheet" type="text/css" href="cryptafinity.css">
+
+  
+
+  
+  <title>MiniFTPc</title>
+  <meta content="Glenn ROLLAND" name="author">
+</head>
+
+<body style="direction: ltr;">
+
+<div style="text-align: justify;" class="page code">
+<h1>CryptAfinity</h1>
+
+<ol>
+
+  <li><a href="#1._Description">Description</a></li>
+
+  <ol>
+
+    <li><a href="#1.1._Auteurs">Auteurs</a></li>
+
+  </ol>
+
+  <li><a href="#2._Pr%E9-requis">Pr&eacute;-requis</a></li>
+
+  <ol>
+
+    <li><a href="#2.1._Sur_un_syst%E8me_Debian_GNULinux">Sur un
+syst&egrave;me Debian GNU/Linux</a></li>
+
+    <li><a href="#2.2._Sur_un_syst%E8me_Apple_MacOS_X_">Sur un
+syst&egrave;me Apple MacOSX (&ge;10.3)</a></li>
+
+    <li><a href="#2.3._Sur_un_syst%E8me_Microsoft_Windows">Sur
+un syst&egrave;me Microsoft Windows</a></li>
+
+  </ol>
+
+  <li><a href="#3._Se_procurer_MiniFTPc">Se procurer
+CryptAfinity</a></li>
+
+  <li><a href="#4._Utiliser_MiniFTPc">Utiliser CryptAfinity</a></li>
+
+  <ol>
+
+    <li><a href="#4.1._Compilation">Compilation</a></li>
+
+    <li><a href="#4.2._Utilisation">Utilisation</a></li>
+
+  </ol>
+
+  <li><a href="#5._Documentation">Documentation</a></li>
+
+</ol>
+
+<h2><a name="1._Description"></a>1.
+<a name="Description"></a>Description</h2>
+
+<p>CryptAfinity est un logiciel
+libre permettant de d&eacute;chiffrer des texte
+obfusqu&eacute;s par des syst&egrave;mes Afines ou l'algorithme
+de Vigen&egrave;re. Il poss&egrave;de les
+caract&eacute;ristiques
+suivantes :</p>
+
+<ul>
+
+  <li>Il est distribu&eacute;
+sous la licence&nbsp;<a href="http://www.gnu.org/copyleft/gpl.html">GNU
+General Public License</a></li>
+
+  <li>Il est
+&eacute;crit en C++.</li>
+
+  <li>Il
+impl&eacute;mente
+pour l'instant uniquement une analyse par fr&eacute;quences,
+&agrave; partir d'une liste de "priorit&eacute;s" de lettres
+dans un texte clair, et de la proportion que repr&eacute;sentent
+les X premieres lettres "prioritaires" dans le texte.</li>
+
+</ul>
+
+<h3><span style="font-weight: bold;"></span>1.1.
+Auteurs</h3>
+
+<p>CryptAfinity a
+&eacute;t&eacute; enti&egrave;rement
+r&eacute;alis&eacute; par Glenn ROLLAND &lt;<a href="mailto:glenux@fr.st">glenux@fr.st</a>&gt;
+&agrave; l'occasion de travaux pratiques du cours de syst&egrave;me du
+Master 2 Ing&eacute;nierie Informatique -
+Syst&egrave;mes, R&eacute;seaux et Internet.</p>
+
+<h2><a name="2._Pr&eacute;-requis"></a>2.
+Pr&eacute;-requis</h2>
+
+<p>CryptAfinity
+n&eacute;cessite les biblioth&egrave;ques de fonctions
+suivantes (dans
+leur version de d&eacute;veloppement si compilez le programme
+vous-m&ecirc;me):</p>
+
+<ul>
+
+  <li>glib-2.0</li>
+
+</ul>
+
+<h3><a name="2.1._Sur_un_syst&egrave;me_Debian_GNULinux"></a>2.1.
+Sur un syst&egrave;me
+Debian GNU/Linux</h3>
+
+<p>Il vous suffit de taper (en
+tant qu'administrateur) les
+commandes suivantes pour installer le n&eacute;cessaire:&nbsp;</p>
+
+<p class="code"># apt-get
+install libglib-2.0-dev</p>
+
+<h3><a name="2.2._Sur_un_syst&egrave;me_Apple_MacOS_X_"></a>2.2.
+Sur un syst&egrave;me Apple MacOS X (&gt;= 10.3)</h3>
+
+<p>
+Il est n&eacute;cessaire d'avoir install&eacute; <span style="font-style: italic;"></span>les&nbsp;<span style="font-style: italic;">autotools</span>
+(automake, autoconf...) dans leur derni&egrave;re
+version.&nbsp;&Agrave; partir de l&agrave;, il suffit de
+taper les commandes suivantes dans un terminal :</p>
+
+<p class="code"># sudo fink
+install glib2-dev</p>
+
+<h3><a name="2.3._Sur_un_syst&egrave;me_Microsoft_Windows"></a>2.3.
+Sur un syst&egrave;me Microsoft Windows</h3>
+
+Cela ne fut pas (encore) test&eacute;, mais il est tr&egrave;s
+probable que cela fonctionne&nbsp;sous Cygwin.<br>
+
+<h2><a name="3._Se_procurer_MiniFTPc"></a>3.
+Se procurer CryptAfinity</h2>
+
+<p>
+Vous
+pouvez t&eacute;l&eacute;charger la derni&egrave;re archive
+des
+sources, ou bien directement la version la plus r&eacute;cente du
+projet sur le d&eacute;p&ocirc;t Subversion du projet.</p>
+
+<h3>3.1. L'archive des sources</h3>
+
+<p>
+Elle est disponible &agrave; l'adresse : </p>
+
+<a href="http://glenux2.free.fr/pub/projets/CryptAfinity/archives/">http://glenux2.free.fr/pub/projets/CryptAfinity/archives/</a><br>
+
+<h3>3.2. Le
+d&eacute;p&ocirc;t Subversion</h3>
+
+<p>Afin d'obtenir les sources les
+plus &agrave; jour, vous pouvez utiliser le logiciel de
+contr&ocirc;le de sources Subversion </p>
+
+<p class="code">$ svn
+checkout http://repository.glenux.ath.cx/svn/CryptAfinity/</p>
+
+<p>Il n'y a pas de mot de passe,
+il suffit donc de presser la touche
+"Entr&eacute;e" pour l'utilisateur "anonymous", si ce dernier vous
+est
+demand&eacute;.</p>
+
+<h2><a name="4._Utiliser_MiniFTPc"></a>4.
+Utiliser CryptAfinity</h2>
+
+<h3><a name="4.1._Compilation"></a>4.1.
+Compilation</h3>
+
+<p>Commencez par
+d&eacute;compressez l'archive.</p>
+
+<p class="code">$ tar -xzvf
+CryptAfinity-0.1.tar.gz</p>
+
+<p>Rendez vous ensuite dans le
+dossier qui vient d'&ecirc;tre cr&eacute;&eacute; lors de
+la d&eacute;compression.</p>
+
+<p class="code">$ cd
+CryptAfinity-0.2</p>
+
+<p>Puis lancez
+l'auto-configuration du logiciel, puis la compilation.</p>
+
+<p class="code">$ ./autogen<br>
+
+$ ./configure<br>
+
+$ make</p>
+
+<p>Le programme sous forme binaire
+se trouvera alors dans le sous-dossier <span class="code">src/tools/</span>,
+sous le nom <span class="code">break_afinity</span></p>
+
+<h3><a name="4.2._Utilisation"></a>4.2.
+Utilisation</h3>
+
+<p>
+CryptAfinity n&eacute;cessite de nombreux param&egrave;tres, avec la
+syntaxe suivante:</p>
+
+<p class="code">Usage:
+break_afinity -a &lt;fichier&gt; -e &lt;float&gt; -f
+&lt;float&gt; -p &lt;fichier&gt; -t
+&lt;fichier&gt; -m <br>
+
+</p>
+
+<p>
+O&ugrave; les param&egrave;tres sont les
+suivants:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td>-a, --alphabet
+&lt;file&gt;&nbsp;</td>
+
+      <td>Fichier contenant les
+lettres de l'alphabet, dans l'ordre.</td>
+
+    </tr>
+
+    <tr>
+
+      <td><br>
+
+-e, --epsilon &lt;float&gt;</td>
+
+      <td>Tolerance pour le test
+des clefs.</td>
+
+    </tr>
+
+    <tr>
+
+      <td>-f, --frequencies
+&lt;float&gt;</td>
+
+      <td>Proportion moyenne que
+repr&eacute;sentent les 9 lettres "prioritaires" dans le texte
+clair.</td>
+
+    </tr>
+
+    <tr>
+
+      <td>-k, --keylength
+&lt;int&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+      <td>Taille de la clef
+maximul (obsol&egrave;te)</td>
+
+    </tr>
+
+    <tr>
+
+      <td>-p, --priorities
+&lt;file&gt;</td>
+
+      <td>Lettres
+ordonn&eacute;es par fr&eacute;quence d&eacute;croissante
+d'apparition dans le texte clair.</td>
+
+    </tr>
+
+    <tr>
+
+      <td>-t, --text
+&lt;file&gt;</td>
+
+      <td>Fichier contenant le
+texte chiffr&eacute;.</td>
+
+    </tr>
+    <tr>
+
+      <td>-m, --mode &lt;a|v&gt;</td>
+
+      <td>Selection du mode "Afine" ou "Vigen&egrave;re"</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h2><a name="5._Documentation"></a>5.
+Documentation</h2>
+
+<h3>5.1. Code</h3>
+
+<p>Vous pouvez trouver la documentation du code de CryptAfinity dans le
+dossier <span class="code">doc/html</span>
+de l'application, ou en suivant <a href="html/index.html">ce lien</a>.</p>
+
+<h3>5.2. Principe du "d&eacute;codeur Afine"</h3>
+
+<p>On g&eacute;n&egrave;re l'espace des&nbsp;clefs possibles pour l'alphabet donn&eacute; en entr&eacute;e:</p>
+
+<p class="code">int alpha_size; //taille de l'alphabet<br>
+
+std::list&lt;int&gt; orb; // nombre premiers avec alpha_size<br>
+
+MathTools mt; // bibliotheque d'outils math&eacute;matiques<br>
+
+std::list&lt;KeyAfine&gt; keyList;<br>
+
+std::list&lt;int&gt;::iterator orbIt;</p>
+
+<p class="code">for (i=1; i&lt;alpha_size; i++){<br>
+
+&nbsp;&nbsp;&nbsp; if (mt.pgcd(i, alpha_size) == 1) {<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; orb.push_back(i);<br>
+
+&nbsp;&nbsp;&nbsp; }<br>
+
+}<br>
+
+// 1 - g&eacute;n&eacute;rer l'espace des 312 clefs<br>
+
+for (orbIt = orb.begin(); orbIt != orb.end(); orbIt++){<br>
+
+&nbsp;&nbsp;&nbsp; KeyAfine key;<br>
+
+&nbsp;&nbsp;&nbsp; key.setCoefA((*orbIt));<br>
+
+&nbsp;&nbsp;&nbsp; for (i=0; i&lt;alpha_size; i++){<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; key.setCoefB(i);<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; keyList.push_back(key);<br>
+
+&nbsp;&nbsp;&nbsp; }<br>
+
+}</p>
+
+<p>Puis on fait une attaque par analyse de fr&eacute;quence sur les textes
+obtenus par "d&eacute;codage" du texte chiffr&eacute; avec les clefs essay&eacute;es.</p>
+
+<p class="code">float frequencies; // fr&eacute;quence cumul&eacute;e des&nbsp;9 lettres les plus pr&eacute;sentes<br>
+
+float epsilon; // marge d'erreur</p>
+
+<p style="text-align: left;" class="code">std::list&lt;KeyAfine&gt;::iterator kLIt;<br>
+
+for (kLIt = keyList.begin(); kLIt != keyList.end(); kLIt++){<br>
+
+&nbsp;&nbsp;&nbsp; float score = 0;<br>
+
+&nbsp;&nbsp;&nbsp; printf("Trying key %s\n", (*kLIt).toString().c_str());<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; plainText = codec.decode(cypherText, *kLIt);&nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp; plainText.setAlphabet(this-&gt;_config.getAlphabet());<br>
+
+&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;9; i++){<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; score += plainText.getCountOf(prio_conf[i]);<br>
+
+&nbsp;&nbsp;&nbsp; }<br>
+
+&nbsp;&nbsp;&nbsp; score = score / plainText.size();<br>
+
+&nbsp;&nbsp;&nbsp; if (fabs(score - frequencies) &lt; epsilon){<br>
+
+&nbsp; &nbsp; &nbsp; printf("KEY = %s\n",(*kLIt).toString().c_str());<br>
+
+&nbsp; &nbsp; &nbsp;&nbsp;printf("PLAIN TEXT(%f) = %s\n", fabs(score-frequencies),<br>
+
+&nbsp; &nbsp; &nbsp; &nbsp; plainText.toAlphabet().c_str());<br>
+
+&nbsp;&nbsp;&nbsp; }<br>
+
+<br>
+
+}</p>
+
+
+<h3>5.3. Principe du "d&eacute;codeur Vigen&egrave;re"</h3>
+On commence par faire r&eacute;cup&eacute;rer les groupes de carat&egrave;res qui se r&eacute;p&egrave;tent dans le texte.<br>
+<br>
+Une fois obtenue plusieurs groupes de lettres, on regarde la distance
+s&eacute;parrant les deux premiers groupes (note d1) puis la distance
+entre les deux suivant (d2). Le PGCD de d1 et d2, doit donner un
+multiple de la longueur de la clef. L'hypoth&egrave;se sous-jacente est
+que ces groupes de lettres sont issue du chiffrement des m&ecirc;mes
+bouts de mots avec les m&ecirc;mes bouts de la clef. Si le PGCD = 1 on
+peut raisonnablement supposer que ce n'est pas le cas.<br>
+<br>
+L'&eacute;tape suivante consiste &agrave; faire une analyse de
+fr&eacute;quence en d&eacute;coupant le texte en un nombre de colonne
+correspondant au pgcd pr&eacute;c&eacute;demment calcul&eacute;. On
+tire de cette analyse de fr&eacute;quence, un ordre de lettre par
+importance. Puis en fonction de donn&eacute;es statistiques
+pr&eacute;alables correspondant au contexte connu &agrave; prioris du
+texte clair que l'on veut d&eacute;crypter, on essaie de faire
+correspondre les lettres les plus souvent vu dans le texte avec le
+mod&egrave;le de fr&eacute;quence.<br>
+<br>
+Ceci nous donne un ensemble de clef (r&eacute;duit &agrave; un ou pas), dans lequel se trouve normalement la bonne clef.<br>
+
+</div>
+
+
+</body>
+</html>

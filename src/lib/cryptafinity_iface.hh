@@ -1,0 +1,4 @@
+#ifndef _CRYPTAFINITY_IFACE_HH
+#define _CRYPTAFINITY_IFACE_HH
+
+#endif
