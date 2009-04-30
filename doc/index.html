@@ -1,6 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="fr-fr">
-<head>
+<html lang="fr-fr"><head>
 
   
   <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
@@ -12,9 +11,8 @@
   
 
   
-  <title>MiniFTPc</title>
-  <meta content="Glenn ROLLAND" name="author">
-</head>
+  
+  <title>CryptAfinity</title><meta content="Glenn ROLLAND" name="author"></head>
 
 <body style="direction: ltr;">
 
@@ -60,6 +58,12 @@ CryptAfinity</a></li>
   </ol>
 
   <li><a href="#5._Documentation">Documentation</a></li>
+  <ol>
+    <li><a href="#5.1._Code">Code</a></li>
+    <li><a href="#5.2._Principe_du_d%E9codeur_Afine">D&eacute;codeur "Afine"</a></li>
+    <li><a href="#5.3._Principe_du_d%E9codeur_Vigen%E8re">D&eacute;codeur "Vigen&egrave;re"</a></li>
+  </ol>
+
 
 </ol>
 
@@ -96,7 +100,7 @@ Auteurs</h3>
 
 <p>CryptAfinity a
 &eacute;t&eacute; enti&egrave;rement
-r&eacute;alis&eacute; par Glenn ROLLAND &lt;<a href="mailto:glenux@fr.st">glenux@fr.st</a>&gt;
+r&eacute;alis&eacute; par Glenn ROLLAND &lt;<a href="mailto:glenux@fr.st">glenux@fr.st</a>&gt; et Roland LAUR&Egrave;S &lt;<a href="mailto:shamox@mac.com">shamox@mac.com</a>&gt; 
 &agrave; l'occasion de travaux pratiques du cours de syst&egrave;me du
 Master 2 Ing&eacute;nierie Informatique -
 Syst&egrave;mes, R&eacute;seaux et Internet.</p>
@@ -308,13 +312,13 @@ texte chiffr&eacute;.</td>
 <h2><a name="5._Documentation"></a>5.
 Documentation</h2>
 
-<h3>5.1. Code</h3>
+<h3><a name="5.1._Code"></a>5.1. Code</h3>
 
 <p>Vous pouvez trouver la documentation du code de CryptAfinity dans le
 dossier <span class="code">doc/html</span>
 de l'application, ou en suivant <a href="html/index.html">ce lien</a>.</p>
 
-<h3>5.2. Principe du "d&eacute;codeur Afine"</h3>
+<h3><a name="5.2._Principe_du_d&eacute;codeur_Afine"></a>5.2. Principe du "d&eacute;codeur Afine"</h3>
 
 <p>On g&eacute;n&egrave;re l'espace des&nbsp;clefs possibles pour l'alphabet donn&eacute; en entr&eacute;e:</p>
 
@@ -400,31 +404,53 @@ for (kLIt = keyList.begin(); kLIt != keyList.end(); kLIt++){<br>
 }</p>
 
 
-<h3>5.3. Principe du "d&eacute;codeur Vigen&egrave;re"</h3>
+<h3><a name="5.3._Principe_du_d&eacute;codeur_Vigen&egrave;re"></a>5.3. Principe du "d&eacute;codeur Vigen&egrave;re"</h3>
+<div style="text-align: justify;">
 On commence par faire r&eacute;cup&eacute;rer les groupes de carat&egrave;res qui se r&eacute;p&egrave;tent dans le texte.<br>
+
 <br>
-Une fois obtenue plusieurs groupes de lettres, on regarde la distance
-s&eacute;parrant les deux premiers groupes (note d1) puis la distance
-entre les deux suivant (d2). Le PGCD de d1 et d2, doit donner un
+Une fois les groupes r&eacute;p&eacute;t&eacute;s de lettres de plus
+grande longueur obtenus (dans l'ordre d&eacute;croissant en fonction de
+la longueur), on calcule la distance
+s&eacute;parant les deux premiers groupes (note d1) puis la distance
+entre les deux suivant (d2). <br>
+On pose K = PGCD(d1, d2). Il est fortement probable que K soit un
 multiple de la longueur de la clef. L'hypoth&egrave;se sous-jacente est
 que ces groupes de lettres sont issue du chiffrement des m&ecirc;mes
-bouts de mots avec les m&ecirc;mes bouts de la clef. Si le PGCD = 1 on
-peut raisonnablement supposer que ce n'est pas le cas.<br>
+bouts de mots avec les m&ecirc;mes bouts de la clef. Si le K = 1 on
+peut raisonnablement supposer que ce n'est pas le cas, et qu'il n'y a pas de r&eacute;p&eacute;titions.<br>
+
 <br>
 L'&eacute;tape suivante consiste &agrave; faire une analyse de
-fr&eacute;quence en d&eacute;coupant le texte en un nombre de colonne
-correspondant au pgcd pr&eacute;c&eacute;demment calcul&eacute;. On
-tire de cette analyse de fr&eacute;quence, un ordre de lettre par
-importance. Puis en fonction de donn&eacute;es statistiques
-pr&eacute;alables correspondant au contexte connu &agrave; prioris du
-texte clair que l'on veut d&eacute;crypter, on essaie de faire
-correspondre les lettres les plus souvent vu dans le texte avec le
-mod&egrave;le de fr&eacute;quence.<br>
+fr&eacute;quence en d&eacute;coupant le texte en K&nbsp;colonnes. On
+classe ensuite les lettres apparaissant dans les colonnes en fonction
+de leur nombre d'apparitions. <br>
+Dans un monde utopique, il suffirait de calculer la distance entre la
+lettre apparaissant le plus souvent dans la colonne, et celle
+apparaissant le plus souvent dans le langage attendu pour le texte
+clair (l'anglais en l'occurrence). <br>
+Cependant il arrive fr&eacute;quemment que l'ordre de lettre soit
+l&eacute;g&egrave;rement chang&eacute; par rapport au r&eacute;sultat
+attendu. Dans le programme, on calcule donc pour chaque colonne les
+distances entre les X lettres les plus fr&eacute;quentes dans la
+colonne et la lettre la plus fr&eacute;quente dans le langage.<br>
+On g&eacute;n&egrave;re ensuite un espace de X ^ K clefs a partir des
+combinaisons de ces diff&eacute;rents d&eacute;calages obtenus sur
+chaque colonne.<br>
 <br>
-Ceci nous donne un ensemble de clef (r&eacute;duit &agrave; un ou pas), dans lequel se trouve normalement la bonne clef.<br>
+Enfin, on d&eacute;code ensuite le texte avec chacune des clef
+g&eacute;n&eacute;r&eacute;es, et en fonction de donn&eacute;es
+statistiques
+relative &agrave; notre connaissance pr&eacute;alable du texte et d'une
+petite marge d'erreur, on filtre les texte d&eacute;chiffr&eacute;s.<br>
+(Exemple: les 9 lettres les plus fr&eacute;quentes repr&eacute;sentent 70% du texte, et on une marge de +/- 4%). <br>
+En jouant sur la marge d'erreur, on laisse passer plus ou moins de
+textes d&eacute;chiffr&eacute;s, parmi lesquels devrait se trouver le
+texte clair attendu.<br>
 
+
+</div>
 </div>
 
 
-</body>
-</html>
+</body></html>
