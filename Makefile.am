@@ -1,3 +1,4 @@
-SUBDIRS = src
+SUBDIRS = src data doc
 
-EXTRA_DIST = doc INSTALL README doxygen.conf autogen
+
+EXTRA_DIST = INSTALL README doxygen.conf autogen
