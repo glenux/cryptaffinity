@@ -5,7 +5,7 @@
 using namespace BreakAfinity;
 
 int main(int argc, char ** argv){
-	BreakAfinity::BreakAfinity br_af;
+	::BreakAfinity::BreakAfinity br_af;
 	
 	br_af.init(argc, argv);
 	br_af.loadFiles();
