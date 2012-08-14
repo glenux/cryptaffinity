@@ -119,8 +119,13 @@ clair.
 
 ### 5.1. Code
 
-Vous pouvez trouver la documentation du code de CryptAffinity dans le dossier
-doc/html de l'application, ou en suivant [ce lien](html/index.html).
+Vous pouvez générer la documentation du code de CryptAffinity avec doxygen
+et la consulter dans le dossier doc/html de l'application.
+
+Pour ce faire, tapez :
+
+    $ doxygen doxygen.conf
+
 
 ### 5.2. Principe du "decodeur Affine"
 
