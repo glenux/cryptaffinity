@@ -1,6 +1,7 @@
 #ifndef _CRYPTAFINITY_GLOBAL_HH
 #define _CRYPTAFINITY_GLOBAL_HH
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <list>
 #include <vector>
