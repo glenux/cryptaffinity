@@ -2,13 +2,13 @@
 demodir = demo
 
 demo_DATA = \
-						demo/vigenere.txt \
-						demo/afine.txt \
-						demo/plaintext.txt \
-						demo/vigenere.2.txt \
-						demo/vigenere.3.txt
+	    demo/vigenere.txt \
+	    demo/afine.txt \
+	    demo/plaintext.txt \
+	    demo/vigenere.2.txt \
+	    demo/vigenere.3.txt
 
-SUBDIRS = src data doc
+SUBDIRS = src data
 
 
 EXTRA_DIST = INSTALL README doxygen.conf autogen \
