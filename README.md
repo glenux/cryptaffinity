@@ -32,7 +32,7 @@ version de développement si compilez le programme vous-même):
 Il vous suffit de taper (en tant qu'administrateur) les commandes suivantes
 pour installer le nécessaire: 
 
-  # apt-get install libglib-2.0-dev
+    # apt-get install libglib-2.0-dev
 
 
 ### 2.2. Sur un système Apple MacOS X (>= 10.3)
@@ -41,7 +41,7 @@ Il est nécessaire d'avoir installé les autotools (automake,
 autoconf...) dans leur dernière version. À partir de là, il
 suffit de taper les commandes suivantes dans un terminal :
 
-  # sudo fink install glib2-dev
+    # sudo fink install glib2-dev
 
 
 ### 2.3. Sur un système Microsoft Windows
@@ -56,7 +56,7 @@ Vous pouvez télécharger la version la plus récente du projet sur le depôt Gi
 
 Afin d'obtenir les sources, il vous suffit d'avoir Git installé sur votre système et de taper la commande suivante :
 
-  $ git clone https://github.com/glenux/cryptaffinity.git
+    $ git clone https://github.com/glenux/cryptaffinity.git
 
 
 ## 4. Utiliser CryptAffinity
@@ -66,18 +66,18 @@ Afin d'obtenir les sources, il vous suffit d'avoir Git installé sur votre syst�
 
 Si vous avez téléchargé une archive, commencez par la decompressez :
 
-  $ tar -xzvf CryptAffinity-0.2.tar.gz
+    $ tar -xzvf CryptAffinity-0.2.tar.gz
 
 Rendez vous ensuite dans le dossier qui vient d'etre crée lors de la
 decompression.
 
-  $ cd CryptAffinity-0.2
+    $ cd CryptAffinity-0.2
 
 Puis lancez l'auto-configuration du logiciel, puis la compilation.
 
-  $ ./autogen
-  $ ./configure
-  $ make
+    $ ./autogen
+    $ ./configure
+    $ make
 
 Le programme sous forme binaire se trouvera alors dans le sous-dossier
 src/tools/, sous le nom break_affinity
@@ -93,26 +93,26 @@ Usage: break_affinity -a <fichier> -e <float> -f <float> -p <fichier> -t
 Ou les parametres sont les suivants:  &nbs
 p_place_holder;   
 
--a, --alphabet <file> 
+**-a**, **--alphabet** _<file>_
 : Fichier contenant les lettres de l'alphabet, dans l'ordre.
 
--e, --epsilon <float>
+**-e**, **--epsilon** _<float>_
 : Tolerance pour le test des clefs.
 
--f, --frequencies <float>
+**-f**, **--frequencies** _<float>_
 : Proportion moyenne que représentent les 9 lettres "prioritaires" dans le texte
 clair.
 
--k, --keylength <int>      
+**-k**, **--keylength** _<int>_
 : Taille de la clef maximum (obsolète)
 
--p, --priorities <file>
+**-p**, **--priorities** _<file>_
 : Lettres ordonnées par fréquence décroissante d'apparition dans le texte clair.
 
--t, --text <file>
+**-t**, **--text** _<file>_
 : Fichier contenant le texte chiffre.
 
--m, --mode <a|v>
+**-m**, **--mode** _<a|v>_
 : Sélection du mode "Affine" ou "Vigenere"
 
 
@@ -128,60 +128,58 @@ doc/html de l'application, ou en suivant [ce lien](html/index.html).
 On génère l'espace des clefs possibles pour l'alphabet donne
 en entrée:
 
-  int alpha_size; //taille de l'alphabet
-  std::list<int> orb; // nombre premiers avec alpha_size
-  MathTools mt; // bibliotheque d'outils mathematiques
-  std::list<KeyAfine> keyList;
-  std::list<int>::iterator orbIt;
-  
-  for (i=1; i<alpha_size; i++){
-      if (mt.pgcd(i, alpha_size) == 1) {
-  	orb.push_back(i);
+    int alpha_size; //taille de l'alphabet
+    std::list<int> orb; // nombre premiers avec alpha_size
+    MathTools mt; // bibliotheque d'outils mathematiques
+    std::list<KeyAfine> keyList;
+    std::list<int>::iterator orbIt;
+    
+    for (i=1; i<alpha_size; i++){
+        if (mt.pgcd(i, alpha_size) == 1) {
+    	orb.push_back(i);
+        }
+    }
+    // 1 - generer l'espace des 312 clefs
+    for (orbIt = orb.begin(); orbIt != orb.end(); orbIt++){
+        KeyAfine key;
+        key.setCoefA((*orbIt));
+        for (i=0; i<alpha_size; i++){
+    	key.setCoefB(i);
+    	keyList.push_back(key);
       }
-  }
-  // 1 - generer l'espace des 312 clefs
-  for (orbIt = orb.begin(); orbIt != orb.end(); orbIt++){
-      KeyAfine key;
-      key.setCoefA((*orbIt));
-      for (i=0; i<alpha_size; i++){
-  	key.setCoefB(i);
-  	keyList.push_back(key);
-      }
-  }
+    }
 
 
 Puis on fait une attaque par analyse de frequence sur les textes obtenus par
 "decodage" du texte chiffre avec les clefs essayees.
 
-  float frequencies; // frequence cumulee des 9 lettres les
-  plus presentes
-  float epsilon; // marge d'erreur
-  std::list<KeyAfine>::iterator kLIt;
-
-  for (kLIt = keyList.begin(); kLIt != keyList.end(); kLIt++){
-      float score = 0;
-      printf("Trying key %s\n", (*kLIt).toString().c_str());
-
-      plainText = codec.decode(cypherText, *kLIt);   
-      plainText.setAlphabet(this->_config.getAlphabet());
-
-      for (int i=0; i<9; i++){
-	  score +=   plainText.getCountOf(prio_conf[i]);
-      }
-
-      score = score / plainText.size();
-
-      if (fabs(score - frequencies) < epsilon){
-	  printf("KEY =
-		  %s\n",(*kLIt).toString().c_str());
-
-	  printf("PLAIN TEXT(%f) = %s\n", fabs
-		  (score-frequencies),
-
-		  plainText.toAlphabet().c_str());
-      }
-  }
-
+    float frequencies; // frequence cumulee des 9 lettres les
+    plus presentes
+    float epsilon; // marge d'erreur
+    std::list<KeyAfine>::iterator kLIt;
+  
+    for (kLIt = keyList.begin(); kLIt != keyList.end(); kLIt++){
+        float score = 0;
+        printf("Trying key %s\n", (*kLIt).toString().c_str());
+  
+        plainText = codec.decode(cypherText, *kLIt);   
+        plainText.setAlphabet(this->_config.getAlphabet());
+  
+        for (int i=0; i<9; i++){
+	    score +=   plainText.getCountOf(prio_conf[i]);
+        }
+  
+        score = score / plainText.size();
+  
+        if (fabs(score - frequencies) < epsilon){
+	    printf("KEY = %s\n",(*kLIt).toString().c_str());
+  
+	    printf("PLAIN TEXT(%f) = %s\n", fabs(score-frequencies),
+  
+		    plainText.toAlphabet().c_str());
+        }
+    }
+  
 
 ### 5.3. Principe du "decodeur Vigenere"
 
