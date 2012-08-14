@@ -87,7 +87,7 @@ src/tools/, sous le nom break_affinity
 
 CryptAffinity necessite de nombreux parametres, avec la syntaxe suivante:
 
-Usage: break_affinity -a <fichier> -e <float> -f <float> -p <fichier> -t
+    Usage: break_affinity -a <fichier> -e <float> -f <float> -p <fichier> -t
 <fichier> -m
 
 Ou les parametres sont les suivants:  &nbs
