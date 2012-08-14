@@ -1,5 +1,5 @@
-#ifndef _BREAKAFINITY_CONFIG_HH
-#define _BREAKAFINITY_CONFIG_HH
+#ifndef _BREAKAFFINITY_CONFIG_HH
+#define _BREAKAFFINITY_CONFIG_HH
 
 #include <string>
 #include <vector>
@@ -8,9 +8,9 @@
 #include "alphabet.hh"
 #include "text.hh"
 
-using namespace LibCryptAfinity;
+using namespace LibCryptAffinity;
 
-namespace BreakAfinity {
+namespace BreakAffinity {
 	class BreakerConfig {
 		private:
 			bool _modeVigenere;

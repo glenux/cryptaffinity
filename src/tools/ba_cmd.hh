@@ -1,20 +1,20 @@
-#ifndef _BREAKAFINITY_CMD_HH
-#define _BREAKAFINITY_CMD_HH
+#ifndef _BREAKAFFINITY_CMD_HH
+#define _BREAKAFFINITY_CMD_HH
 
 #include <string.h>
 #include <list>
 
-#include "breakafinity.hh"
+#include "breakaffinity.hh"
 #include "ba_config.hh"
 
 
-namespace BreakAfinity {
+namespace BreakAffinity {
 	
-	class BreakAfinity {
+	class BreakAffinity {
 		private:
 			BreakerConfig _config;
 		public:
-			BreakAfinity();
+			BreakAffinity();
 			void init(int argc, char ** argv);
 			void loadFiles();
 			void run();

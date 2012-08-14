@@ -1,0 +1,4 @@
+#ifndef _BREAKAFFINITY_IFACE_HH
+#define _BREAKAFFINITY_IFACE_HH
+
+#endif

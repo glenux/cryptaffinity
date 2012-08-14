@@ -4,7 +4,7 @@
 #include <map>
 #include "text.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	class WordList {
 		private:
 			std::map<Text, int>  _word2int; // existance du mot

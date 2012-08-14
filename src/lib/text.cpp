@@ -2,7 +2,7 @@
 #include "text.hh"
 
 #define DEBUG 0
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	bool TextCounter::operator< (TextCounter b){
 		fflush(stdout);
 		if (this->_text.size() < b.getText().size()){

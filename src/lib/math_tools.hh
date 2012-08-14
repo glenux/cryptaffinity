@@ -1,10 +1,10 @@
-#ifndef _LIBCRYPTAFINITY_MATHTOOLS_HH
-#define _LIBCRYPTAFINITY_MATHTOOLS_HH
+#ifndef _LIBCRYPTAFFINITY_MATHTOOLS_HH
+#define _LIBCRYPTAFFINITY_MATHTOOLS_HH
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 
 	class MathTools {
 		private:

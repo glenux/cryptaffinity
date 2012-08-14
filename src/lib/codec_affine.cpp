@@ -1,8 +1,8 @@
 
-#include "codec_afine.hh"
+#include "codec_affine.hh"
 #include "math_tools.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	CodecAfine::CodecAfine() : Codec() {
 	}
 

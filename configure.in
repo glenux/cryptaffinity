@@ -16,21 +16,21 @@ dnl Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 dnl 
 
 ## Autoconf requirements
-AC_INIT([CryptAfinity], [0.2], [glenux@fr.st])
+AC_INIT([CryptAffinity], [0.2], [glenux@glenux.net])
 AC_PREREQ(2.50)
 
 AC_CANONICAL_HOST
 AC_CANONICAL_TARGET
 
 
-AM_INIT_AUTOMAKE([CryptAfinity],[0.2])
+AM_INIT_AUTOMAKE([CryptAffinity],[0.2])
 
 #AC_CANONICAL_SYSTEM
 
 
 
 AM_CONFIG_HEADER(src/config.h)
-AC_CONFIG_SRCDIR([src/lib/cryptafinity.hh])
+AC_CONFIG_SRCDIR([src/lib/cryptaffinity.hh])
 AC_PROG_INSTALL
 
 ## information on the package

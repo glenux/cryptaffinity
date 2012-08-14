@@ -10,9 +10,9 @@
 #include "alphabet.hh"
 #include "text.hh"
 
-using namespace LibCryptAfinity;
+using namespace LibCryptAffinity;
 
-namespace BreakAfinity{
+namespace BreakAffinity{
 	class FileLoader {
 		private: 
 		public:

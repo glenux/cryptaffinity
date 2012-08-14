@@ -1,7 +1,7 @@
 
 #include "key.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	Key::Key() { }
 
 //	std::string Key::toString() { }

@@ -4,9 +4,9 @@
 
 #define DEBUG 1
 
-namespace BreakAfinity {
+namespace BreakAffinity {
 
-	void BreakAfinity::runAfine(){
+	void BreakAffinity::runAfine(){
 		MathTools mt;
 		CodecAfine codec;
 		FreqAnalyser fa;

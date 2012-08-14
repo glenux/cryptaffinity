@@ -1,14 +1,14 @@
-#ifndef _LIBCRYPAFINITY_CODEC_VIGENERE_HH
-#define _LIBCRYPAFINITY_CODEC_VIGENERE_HH
+#ifndef _LIBCRYPAFFINITY_CODEC_VIGENERE_HH
+#define _LIBCRYPAFFINITY_CODEC_VIGENERE_HH
 
 #include "codec.hh"
 #include "key_vigenere.hh"
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	class CodecVigenere : public Codec {
 		private:
 		public:

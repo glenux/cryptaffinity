@@ -1,12 +1,12 @@
-#ifndef _LIBCRYPAFINITY_TEXT_HH
-#define _LIBCRYPAFINITY_TEXT_HH
+#ifndef _LIBCRYPAFFINITY_TEXT_HH
+#define _LIBCRYPAFFINITY_TEXT_HH
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
 #include "alphabet.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	class TextCounter;
 	
 	class Text : public std::vector<int> {

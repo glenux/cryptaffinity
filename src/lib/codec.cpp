@@ -1,7 +1,7 @@
 
 #include "codec.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	Codec::Codec(){
 	}
 

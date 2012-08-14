@@ -3,7 +3,7 @@ demodir = demo
 
 demo_DATA = \
 	    demo/vigenere.txt \
-	    demo/afine.txt \
+	    demo/affine.txt \
 	    demo/plaintext.txt \
 	    demo/vigenere.2.txt \
 	    demo/vigenere.3.txt

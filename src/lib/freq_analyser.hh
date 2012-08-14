@@ -1,12 +1,12 @@
-#ifndef _LIBCRYPTAFINITY_FREQANALYSER_HH
-#define _LIBCRYPTAFINITY_FREQANALYSER_HH
+#ifndef _LIBCRYPTAFFINITY_FREQANALYSER_HH
+#define _LIBCRYPTAFFINITY_FREQANALYSER_HH
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
 #include "text.hh" // body
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 
 	class FreqAnalyser {
 		private:

@@ -1,1 +1,1 @@
-./tools/break_afinity -a tests/alphabet.txt -f 0.7 -m v -p tests/priority.txt -t tests/vigenere.txt -e 0.05
+./tools/break_affinity -a data/alphabet.txt -f 0.7 -m v -p data/priority.txt -t demo/vigenere.txt -e 0.05

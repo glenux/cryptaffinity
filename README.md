@@ -3,7 +3,7 @@
 ## 1. Description
 
 CryptAffinity est un logiciel libre permettant de déchiffrer des texte
-obfusqués par des systemes Afines ou l'algorithme de Vigenère. Il possède les
+obfusqués par des systemes Affines ou l'algorithme de Vigenère. Il possède les
 caractéristiques suivantes :
 
   * Il est distribue sous la licence [GNU General Public License](http://www.gnu.org/copyleft/gpl.html)
@@ -120,7 +120,7 @@ clair.
 Pour utiliser le décodeur Affine : 
 
     break_affinity -a data/alphabet.txt -f 0.7 -m a -p data/priority.txt \
-        -t demo/afine.txt -e 0.1
+        -t demo/affine.txt -e 0.1
 
 Pour utiliser le décodeur Vigenère : 
 
@@ -148,7 +148,7 @@ en entrée:
     int alpha_size; //taille de l'alphabet
     std::list<int> orb; // nombre premiers avec alpha_size
     MathTools mt; // bibliotheque d'outils mathematiques
-    std::list<KeyAfine> keyList;
+    std::list<KeyAffine> keyList;
     std::list<int>::iterator orbIt;
     
     for (i=1; i<alpha_size; i++){
@@ -158,7 +158,7 @@ en entrée:
     }
     // 1 - generer l'espace des 312 clefs
     for (orbIt = orb.begin(); orbIt != orb.end(); orbIt++){
-        KeyAfine key;
+        KeyAffine key;
         key.setCoefA((*orbIt));
         for (i=0; i<alpha_size; i++){
     	key.setCoefB(i);
@@ -173,7 +173,7 @@ Puis on fait une attaque par analyse de frequence sur les textes obtenus par
     float frequencies; // frequence cumulee des 9 lettres les
     plus presentes
     float epsilon; // marge d'erreur
-    std::list<KeyAfine>::iterator kLIt;
+    std::list<KeyAffine>::iterator kLIt;
   
     for (kLIt = keyList.begin(); kLIt != keyList.end(); kLIt++){
         float score = 0;

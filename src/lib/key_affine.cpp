@@ -1,10 +1,10 @@
 
-#include "key_afine.hh"
+#include "key_affine.hh"
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	
 	int KeyAfine::getCoefA(){
 		return this->_a;

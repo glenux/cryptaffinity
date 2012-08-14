@@ -1,7 +1,7 @@
 
 #include "alphabet.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 
 	Alphabet::Alphabet() : std::vector<std::string>() { }
 

@@ -1,10 +1,10 @@
-#ifndef _BREAKAFINITY_GLOBAL_HH
-#define _BREAKAFINITY_GLOBAL_HH
+#ifndef _BREAKAFFINITY_GLOBAL_HH
+#define _BREAKAFFINITY_GLOBAL_HH
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "cryptafinity.hh"
+#include "cryptaffinity.hh"
 
 #define COLOR_GREEN "\x1B[33m"
 #define COLOR_NORMAL "\x1B[0m"

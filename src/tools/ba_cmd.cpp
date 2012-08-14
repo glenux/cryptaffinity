@@ -4,20 +4,20 @@
 
 #define DEBUG 0
 
-namespace BreakAfinity {
-	BreakAfinity::BreakAfinity(){
+namespace BreakAffinity {
+	BreakAffinity::BreakAffinity(){
 		// on fixe la config par defaut
 		int i;
 		i=i+1;
 	}
 
-	void BreakAfinity::loadFiles(){
+	void BreakAffinity::loadFiles(){
 		printf("ALIVE !!!\n");
 		this->_config.loadFiles();
 		printf("ALIVE ???\n");
 	}
 
-	void BreakAfinity::init(int argc, char **argv) {
+	void BreakAffinity::init(int argc, char **argv) {
 		int i;
 
 		for (i = 1; i + 1 < argc; i = i + 2){
@@ -60,7 +60,7 @@ namespace BreakAfinity {
 			printf("-a, --alphabet <file>      Letters ordered by decreasing frequency\n");
 			printf("-e, --epsilon <float>      Tolerance for the final key test\n");
 			printf("-f, --frequencies <float>  Average frequencies for the 9 first letters\n");
-			printf("-m, --mode ( v | a )       Choose the kind of cypher : vigenere or afine.\n");
+			printf("-m, --mode ( v | a )       Choose the kind of cypher : vigenere or affine.\n");
 			printf("-p, --priorities <file>    Letters ordered by decreasing frequency\n");
 			printf("-t, --text <file>          Cipher text to decipher\n");
 			//printf("-s, --popsize <int>      Population size in each generation\n");
@@ -71,7 +71,7 @@ namespace BreakAfinity {
 		}
 	}
 
-	void BreakAfinity::run(){
+	void BreakAffinity::run(){
 		// vigenere ou affine ?
 		MathTools mt;
 		CodecVigenere codec;

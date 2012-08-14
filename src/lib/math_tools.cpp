@@ -3,7 +3,7 @@
 
 #define DEBUG 1
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	
 	int MathTools::pgcd(int a, int b){
 		int fa = a;

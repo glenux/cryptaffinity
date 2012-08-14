@@ -1,7 +1,7 @@
 
 #include "word_list.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	std::map<Text,int> WordList::getWordsContaining(int value){
 		std::map<Text,int> result;
 		std::map<int, TextCounter>::iterator foundVal;

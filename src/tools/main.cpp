@@ -1,11 +1,11 @@
 
-#include "breakafinity.hh"
+#include "breakaffinity.hh"
 #include "ba_cmd.hh"
 
-using namespace BreakAfinity;
+using namespace BreakAffinity;
 
 int main(int argc, char ** argv){
-	::BreakAfinity::BreakAfinity br_af;
+	::BreakAffinity::BreakAffinity br_af;
 	
 	br_af.init(argc, argv);
 	br_af.loadFiles();

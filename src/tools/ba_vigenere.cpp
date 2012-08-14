@@ -4,9 +4,9 @@
 
 #define DEBUG 0
 
-namespace BreakAfinity {
+namespace BreakAffinity {
 
-	void BreakAfinity::runVigenere(){
+	void BreakAffinity::runVigenere(){
 		MathTools mt;
 		CodecVigenere codec;
 		FreqAnalyser fa;
@@ -17,7 +17,7 @@ namespace BreakAfinity {
 		int alpha_size = this->_config.getAlphabet().size();
 
 		// 1 - repérer les mots qui se répentent
-		pDEBUG("BreakAfinity::run","analysing %s\n",cypherText.toString().c_str());
+		pDEBUG("BreakAffinity::run","analysing %s\n",cypherText.toString().c_str());
 		KeyVigenere key;
 		TextCounter fst;
 		TextCounter sec;
@@ -49,7 +49,7 @@ namespace BreakAfinity {
 
 		// 2 - on en déduit la longueur de la clef
 		key_len = mt.pgcd(dist1,dist2);
-		pDEBUG("BreakAfinity::run","PGCD(%d, %d) = %d\n", dist1, dist2, key_len);
+		pDEBUG("BreakAffinity::run","PGCD(%d, %d) = %d\n", dist1, dist2, key_len);
 
 		// 3 - on calcule le décalage par colonne
 		std::list<TextCounter>::iterator pI;

@@ -2,7 +2,7 @@
 #include "ba_config.hh"
 #include "file_loader.hh"
 
-namespace BreakAfinity {
+namespace BreakAffinity {
 	void BreakerConfig::setMode(char * m){
 		switch(m[0]){
 			case 'v':

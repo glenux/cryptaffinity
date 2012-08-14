@@ -1,9 +1,9 @@
 
 #include "file_loader.hh"
 
-using namespace LibCryptAfinity;
+using namespace LibCryptAffinity;
 
-namespace BreakAfinity {
+namespace BreakAffinity {
 	std::vector<int> FileLoader::loadPriorities(
 			std::map<std::string, int> reverse_alpha, 
 			std::string filename){

@@ -1,5 +1,5 @@
-#ifndef _CRYPTAFINITY_PROTO_HH
-#define _CRYPTAFINITY_PROTO_HH
+#ifndef _CRYPTAFFINITY_PROTO_HH
+#define _CRYPTAFFINITY_PROTO_HH
 
 #include "math_tools.hh"
 #include "alphabet.hh"
@@ -9,6 +9,6 @@
 #include "freq_analyser.hh"
 #include "codec.hh"
 #include "codec_vigenere.hh"
-#include "codec_afine.hh"
+#include "codec_affine.hh"
 
 #endif

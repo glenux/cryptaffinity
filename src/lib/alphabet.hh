@@ -1,11 +1,11 @@
-#ifndef _LIBCRYPAFINITY_ALPHABET_HH
-#define _LIBCRYPAFINITY_ALPHABET_HH
+#ifndef _LIBCRYPAFFINITY_ALPHABET_HH
+#define _LIBCRYPAFFINITY_ALPHABET_HH
 
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	class ReverseAlphabet: public std::map<std::string, int> {
 	};
 

@@ -1,7 +1,7 @@
 
 #include "codec_vigenere.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	CodecVigenere::CodecVigenere() : Codec() {
 	}
 

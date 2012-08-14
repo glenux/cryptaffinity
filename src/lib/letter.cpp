@@ -1,6 +1,6 @@
 #include "letter.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 
 	Letter::Letter(const Letter &orig){
 		this->_alphabet = orig._alphabet;

@@ -1,7 +1,7 @@
 
 #include "key_vigenere.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	KeyVigenere::KeyVigenere() : Key(), Text() { // Key()
 		int i;
 		i=0;

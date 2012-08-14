@@ -4,10 +4,10 @@
 
 //#include "text.hh"
 
-//#include "cryptafinity_global.hh"
-//#include "cryptafinity_iface.hh"
+//#include "cryptaffinity_global.hh"
+//#include "cryptaffinity_iface.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	class Key {
 		private:
 		public:

@@ -4,7 +4,7 @@
 
 #define DEBUG 0
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	std::list<TextCounter> FreqAnalyser::getPriorities(Text text, int keylen, int column){
 		std::list<TextCounter> result;
 		std::map<Text, int> counter;

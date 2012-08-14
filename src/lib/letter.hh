@@ -1,12 +1,12 @@
-#ifndef _LIBCRYPTAFINITY_LETTER_HH
-#define _LIBCRYPTAFINITY_LETTER_HH
+#ifndef _LIBCRYPTAFFINITY_LETTER_HH
+#define _LIBCRYPTAFFINITY_LETTER_HH
 
-#include "cryptafinity_global.hh"
-#include "cryptafinity_iface.hh"
+#include "cryptaffinity_global.hh"
+#include "cryptaffinity_iface.hh"
 
 #include "alphabet.hh"
 
-namespace LibCryptAfinity {
+namespace LibCryptAffinity {
 	class Letter {
 		private:
 			Alphabet _alphabet;
