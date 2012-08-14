@@ -3,7 +3,7 @@
 ## 1. Description
 
 CryptAffinity est un logiciel libre permettant de déchiffrer des texte
-obfusqués par des systemes Afines ou l'algorithme de Vigenere. Il possède les
+obfusqués par des systemes Afines ou l'algorithme de Vigenère. Il possède les
 caractéristiques suivantes :
 
   * Il est distribue sous la licence [GNU General Public License](http://www.gnu.org/copyleft/gpl.html)
@@ -112,7 +112,20 @@ clair.
 : Fichier contenant le texte chiffre.
 
 **-m**, **--mode** _MODE_
-: Sélection du mode "Affine" (a) ou "Vigenere" (v)
+: Sélection du mode "Affine" (a) ou "Vigenère" (v)
+
+
+### 4.3. Exemples
+
+Pour utiliser le décodeur Affine : 
+
+    break_affinity -a data/alphabet.txt -f 0.7 -m a -p data/priority.txt \
+        -t demo/afine.txt -e 0.1
+
+Pour utiliser le décodeur Vigenère : 
+
+    break_afinity -a data/alphabet.txt -f 0.7 -m v -p data/priority.txt \
+        -t demo/vigenere.txt -e 0.05
 
 
 ## 5. Documentation
@@ -185,7 +198,7 @@ Puis on fait une attaque par analyse de frequence sur les textes obtenus par
     }
   
 
-### 5.3. Principe du "décodeur Vigenere"
+### 5.3. Principe du "décodeur Vigenère"
 
 On commence par détecter les groupes de carateres qui se repetent dans le
 texte.
@@ -215,11 +228,11 @@ par rapport au resultat attendu. Dans le programme, on calcule donc pour
 chaque colonne les distances entre les X lettres les plus frequentes dans la
 colonne et la lettre la plus frequente dans le langage.
 
-On genere ensuite un espace de X ^ K clefs a partir des combinaisons de ces
+On génère ensuite un espace de X ^ K clefs a partir des combinaisons de ces
 differents décalages obtenus sur chaque colonne.
 
   
-Enfin, on décode ensuite le texte avec chacune des clef generees, et en
+Enfin, on décode ensuite le texte avec chacune des clef génerees, et en
 fonction de donnees statistiques relative a notre connaissance prealable du
 texte et d'une petite marge d'erreur, on filtre les texte déchiffres.
 
