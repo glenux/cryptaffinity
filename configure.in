@@ -73,35 +73,13 @@ dnl ***************************************************************************
 dnl Gettext stuff.
 dnl ***************************************************************************
 
-#GETTEXT_PACKAGE=yalag-0.1
-#AC_SUBST(GETTEXT_PACKAGE)
-#AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
-
-#ALL_LINGUAS="fr"
-#AM_GLIB_GNU_GETTEXT
-
-
 dnl Check for programs
 
 dnl Check for build configuration.
-#AC_PROG_INTLTOOL
 
 AM_PROG_LIBTOOL
 
 dnl Checks for header files.
-
-#AC_MSG_NOTICE([checking presence of SQLite])
-#AC_CHECK_HEADERS([sqlite.h],[],
-#	[
-#	AC_MSG_NOTICE([*** Please install/upgrade SQLite before proceeding])
-#	AC_MSG_NOTICE([*** with Unlost Memories installation.])
-#	AC_MSG_ERROR([cannot find sqlite.h])
-#	])
-	
-#sqlite_deps="sqlite3 >= 3.0"
-#PKG_CHECK_MODULES(SQLITE3,$sqlite_deps,build_sqlite=yes,build_sqlite=no)
-#AC_SUBST(SQLITE3_CFLAGS)
-#AC_SUBST(SQLITE3_LIBS)
 
 glib_deps="glib-2.0 >= 2.0"
 PKG_CHECK_MODULES(GLIB2,$glib_deps,	build_glib=yes, build_glib=no)
@@ -111,60 +89,43 @@ AC_SUBST(GLIB2_LIBS)
 ##########
 # Figure out where to get the READLINE header files.
 #
-AC_MSG_CHECKING([readline header files])
-found=no
-if test "$config_TARGET_READLINE_INC" != ""; then
-  TARGET_READLINE_INC=$config_TARGET_READLINE_INC
-  found=yes
-fi
-if test "$found" = "yes"; then
-  AC_MSG_RESULT($TARGET_READLINE_INC)
-else
-  AC_MSG_RESULT(not specified: still searching...)
-  AC_CHECK_HEADER(readline.h, [found=yes])
-fi
-if test "$found" = "no"; then
-  for dir in /usr /usr/local /usr/local/readline /usr/contrib /mingw; do
-    AC_CHECK_FILE($dir/include/readline.h, found=yes)
-    if test "$found" = "yes"; then
-      TARGET_READLINE_INC="-I$dir/include"
-      break
-    fi
-    AC_CHECK_FILE($dir/include/readline/readline.h, found=yes)
-    if test "$found" = "yes"; then
-      TARGET_READLINE_INC="-I$dir/include/readline"
-      break
-    fi
-  done
-fi
-if test "$found" = "yes"; then
-  if test "$TARGET_READLINE_LIBS" = ""; then
-    TARGET_HAVE_READLINE=0
-  else
-    TARGET_HAVE_READLINE=1
-  fi
-else
-  TARGET_HAVE_READLINE=0
-fi
-AC_SUBST(TARGET_READLINE_INC)
-AC_SUBST(TARGET_HAVE_READLINE)
-
-#libxml2_deps="libxml-2.0 >= 2.4.1"
-#PKG_CHECK_MODULES(LIBXML2,$libxml2_deps, build_libxml2=yes, build_libxml2=no)
-#AC_SUBST(LIBXML2_CFLAGS)
-#AC_SUBST(LIBXML2_LIBS)
-
-#if test $build_libxml2 == yes ; then
-#  AC_DEFINE(HAVE_LIBXML2_H,1,[Vaut 1 lorsque l'on utilise LIBXML2.])
-#else
-#  AC_DEFINE(HAVE_LIBXML2_H,0,[Vaut 1 lorsque l'on utilise LIBXML2.])
+#AC_MSG_CHECKING([readline header files])
+#found=no
+#if test "$config_TARGET_READLINE_INC" != ""; then
+#  TARGET_READLINE_INC=$config_TARGET_READLINE_INC
+#  found=yes
 #fi
-
-#libxmlpp_deps="libxml++-2.6 >= 2.8"
-#PKG_CHECK_MODULES(LIBXMLPP,$libxmlpp_deps, build_libxmlpp=yes, build_libxmlpp=no)
-#AC_SUBST(LIBXMLPP_CFLAGS)
-#AC_SUBST(LIBXMLPP_LIBS)
-
+#if test "$found" = "yes"; then
+#  AC_MSG_RESULT($TARGET_READLINE_INC)
+#else
+#  AC_MSG_RESULT(not specified: still searching...)
+#  AC_CHECK_HEADER(readline.h, [found=yes])
+#fi
+#if test "$found" = "no"; then
+#  for dir in /usr /usr/local /usr/local/readline /usr/contrib /mingw; do
+#    AC_CHECK_FILE($dir/include/readline.h, found=yes)
+#    if test "$found" = "yes"; then
+#      TARGET_READLINE_INC="-I$dir/include"
+#      break
+#    fi
+#    AC_CHECK_FILE($dir/include/readline/readline.h, found=yes)
+#    if test "$found" = "yes"; then
+#      TARGET_READLINE_INC="-I$dir/include/readline"
+#      break
+#    fi
+#  done
+#fi
+#if test "$found" = "yes"; then
+#  if test "$TARGET_READLINE_LIBS" = ""; then
+#    TARGET_HAVE_READLINE=0
+#  else
+#    TARGET_HAVE_READLINE=1
+#  fi
+#else
+#  TARGET_HAVE_READLINE=0
+#fi
+#AC_SUBST(TARGET_READLINE_INC)
+#AC_SUBST(TARGET_HAVE_READLINE)
 
 AC_CONFIG_FILES([Makefile 
 		doc/Makefile

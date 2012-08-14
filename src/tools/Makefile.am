@@ -22,7 +22,8 @@ break_afinity_SOURCES += ba_cmd.hh breakafinity.hh breakafinity_global.hh breaka
 #	miniftp_proto.hh \
 #	server_msg.hh
 
-INCLUDES= 	-I../lib/ -I./ @GLIB2_CFLAGS@ @TARGET_READLINE_INC@
+#INCLUDES= 	-I../lib/ -I./ @GLIB2_CFLAGS@ @TARGET_READLINE_INC@
+INCLUDES= 	-I../lib/ -I./ @GLIB2_CFLAGS@ 
 
 #BUILT_SOURCES = source_parser.h source_lexer.cc
 
