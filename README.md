@@ -1,89 +1,77 @@
-# CryptAfinity
+# CryptAffinity
 
 ## 1. Description
 
-CryptAfinity est un logiciel libre permettant de dechiffrer des texte
-obfusques par des systemes Afines ou l'algorithme de Vigenere. Il possede les
-caracteristiques suivantes :
+CryptAffinity est un logiciel libre permettant de déchiffrer des texte
+obfusqués par des systemes Afines ou l'algorithme de Vigenere. Il possède les
+caractéristiques suivantes :
 
   * Il est distribue sous la licence [GNU General Public License](http://www.gnu.org/copyleft/gpl.html)
-  * Il est ecrit en C++.
-  * Il implemente pour l'instant uniquement une analyse par frequences, a partir d'une liste de "priorites" de lettres dans un texte clair, et de la proportion que representent les X premieres lettres "prioritaires" dans le texte.
+  * Il est écrit en C++.
+  * Il implémente pour l'instant uniquement une analyse par fréquences, à partir d'une liste de "priorités" de lettres dans un texte clair, et de la proportion que représentent les X premières lettres "prioritaires" dans le texte.
 
 ### 1.1. Auteurs
 
-CryptAfinity a ete entierement realise par Glenn ROLLAND
+CryptAffinity a été concçu et realisé par Glenn ROLLAND
 <[glenux@glenux.net](mailto:glenux@glenux.net)> et Roland LAURÈS
-<[shamox@mac.com](mailto:shamox@mac.com)> a l'occasion de travaux pratiques du
-cours de systeme du Master 2 Ingenierie Informatique - Systèmes, Reseaux et
+<[shamox@mac.com](mailto:shamox@mac.com)> à l'occasion de travaux pratiques du
+cours de système du Master 2 Ingenierie Informatique - Systèmes, Reseaux et
 Internet.
+
 
 ## 2. Pre-requis
 
-CryptAfinity necessite les bibliotheques de fonctions suivantes (dans leur
-version de developpement si compilez le programme vous-meme):
+CryptAffinity nécessite les bibliothèques de fonctions suivantes (dans leur
+version de développement si compilez le programme vous-même):
 
   * glib-2.0
 
 
-### 2.1. Sur un systeme Debian GNU/Linux
+### 2.1. Sur un système Debian GNU/Linux
 
 Il vous suffit de taper (en tant qu'administrateur) les commandes suivantes
-pour installer le necessaire: 
+pour installer le nécessaire: 
 
   # apt-get install libglib-2.0-dev
 
 
-### 2.2. Sur un systeme Apple MacOS X (>= 10.3)
+### 2.2. Sur un système Apple MacOS X (>= 10.3)
 
-Il est necessaire d'avoir installe les autotools (automake,
-autoconf...) dans leur derniere version. À partir de la, il
+Il est nécessaire d'avoir installé les autotools (automake,
+autoconf...) dans leur dernière version. À partir de là, il
 suffit de taper les commandes suivantes dans un terminal :
 
   # sudo fink install glib2-dev
 
 
-### 2.3. Sur un systeme Microsoft Windows
+### 2.3. Sur un système Microsoft Windows
 
-Cela ne fut pas (encore) teste, mais il est tres probable que cela
-fonctionne sous Cygwin.
-
-
-## 3. Se procurer CryptAfinity
-
-Vous pouvez telecharger la derniere archive des sources, ou bien directement
-la version la plus recente du projet sur le depot Subversion du projet.
+Cela ne fut pas testé, mais il est probable que cela
+fonctionne sous Cygwin ou équivalent.
 
 
-### 3.1. L'archive des sources
+## 3. Se procurer CryptAffinity
 
-Elle est disponible a l'adresse :
+Vous pouvez télécharger la version la plus récente du projet sur le depôt Git du projet.
 
-[http://glenux2.free.fr/pub/projets/CryptAfinity/archives/](http://glenux2.fre
-e.fr/pub/projets/CryptAfinity/archives/)
-
-
-### 3.2. Le depot Subversion
-
-Afin d'obtenir les sources les plus a jour, vous pouvez utiliser le logiciel
-de controle de sources Git :
+Afin d'obtenir les sources, il vous suffit d'avoir Git installé sur votre système et de taper la commande suivante :
 
   $ git clone https://github.com/glenux/cryptaffinity.git
 
 
-## 4. Utiliser CryptAfinity
+## 4. Utiliser CryptAffinity
 
 
 ### 4.1. Compilation
 
 Si vous avez téléchargé une archive, commencez par la decompressez :
 
-  $ tar -xzvf CryptAfinity-0.2.tar.gz
+  $ tar -xzvf CryptAffinity-0.2.tar.gz
 
 Rendez vous ensuite dans le dossier qui vient d'etre crée lors de la
 decompression.
 
-  $ cd CryptAfinity-0.2
+  $ cd CryptAffinity-0.2
 
 Puis lancez l'auto-configuration du logiciel, puis la compilation.
 
@@ -92,14 +80,14 @@ Puis lancez l'auto-configuration du logiciel, puis la compilation.
   $ make
 
 Le programme sous forme binaire se trouvera alors dans le sous-dossier
-src/tools/, sous le nom break_afinity
+src/tools/, sous le nom break_affinity
 
 
 ### 4.2. Utilisation
 
-CryptAfinity necessite de nombreux parametres, avec la syntaxe suivante:
+CryptAffinity necessite de nombreux parametres, avec la syntaxe suivante:
 
-Usage: break_afinity -a <fichier> -e <float> -f <float> -p <fichier> -t
+Usage: break_affinity -a <fichier> -e <float> -f <float> -p <fichier> -t
 <fichier> -m
 
 Ou les parametres sont les suivants:  &nbs
@@ -112,33 +100,33 @@ p_place_holder;
 : Tolerance pour le test des clefs.
 
 -f, --frequencies <float>
-: Proportion moyenne que representent les 9 lettres "prioritaires" dans le texte
+: Proportion moyenne que représentent les 9 lettres "prioritaires" dans le texte
 clair.
 
 -k, --keylength <int>      
-: Taille de la clef maximul (obsolete)
+: Taille de la clef maximum (obsolète)
 
 -p, --priorities <file>
-: Lettres ordonnees par frequence decroissante d'apparition dans le texte clair.
+: Lettres ordonnées par fréquence décroissante d'apparition dans le texte clair.
 
 -t, --text <file>
 : Fichier contenant le texte chiffre.
 
 -m, --mode <a|v>
-: Selection du mode "Afine" ou "Vigenere"
+: Sélection du mode "Affine" ou "Vigenere"
 
 
 ## 5. Documentation
 
 ### 5.1. Code
 
-Vous pouvez trouver la documentation du code de CryptAfinity dans le dossier
+Vous pouvez trouver la documentation du code de CryptAffinity dans le dossier
 doc/html de l'application, ou en suivant [ce lien](html/index.html).
 
-### 5.2. Principe du "decodeur Afine"
+### 5.2. Principe du "decodeur Affine"
 
-On genere l'espace des clefs possibles pour l'alphabet donne
-en entree:
+On génère l'espace des clefs possibles pour l'alphabet donne
+en entrée:
 
   int alpha_size; //taille de l'alphabet
   std::list<int> orb; // nombre premiers avec alpha_size
