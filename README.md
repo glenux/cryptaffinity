@@ -64,12 +64,12 @@ Afin d'obtenir les sources, il vous suffit d'avoir Git installé sur votre syst�
 
 ### 4.1. Compilation
 
-Si vous avez téléchargé une archive, commencez par la decompressez :
+Si vous avez téléchargé une archive, commencez par la décompressez :
 
     $ tar -xzvf CryptAffinity-0.2.tar.gz
 
 Rendez vous ensuite dans le dossier qui vient d'etre crée lors de la
-decompression.
+décompression.
 
     $ cd CryptAffinity-0.2
 
@@ -127,7 +127,7 @@ Pour ce faire, tapez :
     $ doxygen doxygen.conf
 
 
-### 5.2. Principe du "decodeur Affine"
+### 5.2. Principe du "décodeur Affine"
 
 On génère l'espace des clefs possibles pour l'alphabet donne
 en entrée:
@@ -155,7 +155,7 @@ en entrée:
 
 
 Puis on fait une attaque par analyse de frequence sur les textes obtenus par
-"decodage" du texte chiffre avec les clefs essayees.
+"décodage" du texte chiffre avec les clefs essayees.
 
     float frequencies; // frequence cumulee des 9 lettres les
     plus presentes
@@ -185,12 +185,12 @@ Puis on fait une attaque par analyse de frequence sur les textes obtenus par
     }
   
 
-### 5.3. Principe du "decodeur Vigenere"
+### 5.3. Principe du "décodeur Vigenere"
 
 On commence par détecter les groupes de carateres qui se repetent dans le
 texte.
 
-Une fois ces groupes repétes de lettres obtenus (dans l'ordre decroissant en
+Une fois ces groupes repétes de lettres obtenus (dans l'ordre décroissant en
 fonction de leur longueur), on calcule la distance separant les deux premiers
 groupes (note d1) puis la distance entre les deux suivant (d2).
 
@@ -201,7 +201,7 @@ de la clef. Si le K = 1 on peut raisonnablement supposer que ce n'est pas le
 cas, et qu'il n'y a pas de repetitions.
 
 
-L'etape suivante consiste a faire une analyse de frequence en decoupant le
+L'etape suivante consiste a faire une analyse de frequence en découpant le
 texte en K colonnes. On classe ensuite les lettres
 apparaissant dans les colonnes en fonction de leur nombre d'apparitions.
 
@@ -216,16 +216,16 @@ chaque colonne les distances entre les X lettres les plus frequentes dans la
 colonne et la lettre la plus frequente dans le langage.
 
 On genere ensuite un espace de X ^ K clefs a partir des combinaisons de ces
-differents decalages obtenus sur chaque colonne.
+differents décalages obtenus sur chaque colonne.
 
   
-Enfin, on decode ensuite le texte avec chacune des clef generees, et en
+Enfin, on décode ensuite le texte avec chacune des clef generees, et en
 fonction de donnees statistiques relative a notre connaissance prealable du
-texte et d'une petite marge d'erreur, on filtre les texte dechiffres.
+texte et d'une petite marge d'erreur, on filtre les texte déchiffres.
 
 (Exemple: les 9 lettres les plus frequentes representent 70% du texte, et on
 une marge de +/- 4%).
 
 En jouant sur la marge d'erreur, on laisse passer plus ou moins de textes
-dechiffres, parmi lesquels devrait se trouver le texte clair attendu.
+déchiffres, parmi lesquels devrait se trouver le texte clair attendu.
 
