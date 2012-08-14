@@ -93,27 +93,27 @@ Usage: break_affinity -a <fichier> -e <float> -f <float> -p <fichier> -t
 Ou les parametres sont les suivants:  &nbs
 p_place_holder;   
 
-**-a**, **--alphabet** _<file>_
+**-a**, **--alphabet** _FILE_
 : Fichier contenant les lettres de l'alphabet, dans l'ordre.
 
-**-e**, **--epsilon** _<float>_
+**-e**, **--epsilon** _FLOAT_
 : Tolerance pour le test des clefs.
 
-**-f**, **--frequencies** _<float>_
+**-f**, **--frequencies** _FLOAT_
 : Proportion moyenne que représentent les 9 lettres "prioritaires" dans le texte
 clair.
 
-**-k**, **--keylength** _<int>_
+**-k**, **--keylength** _UINT_
 : Taille de la clef maximum (obsolète)
 
-**-p**, **--priorities** _<file>_
+**-p**, **--priorities** _FILE_
 : Lettres ordonnées par fréquence décroissante d'apparition dans le texte clair.
 
-**-t**, **--text** _<file>_
+**-t**, **--text** _FILE_
 : Fichier contenant le texte chiffre.
 
-**-m**, **--mode** _<a|v>_
-: Sélection du mode "Affine" ou "Vigenere"
+**-m**, **--mode** _MODE_
+: Sélection du mode "Affine" (a) ou "Vigenere" (v)
 
 
 ## 5. Documentation
