@@ -1,5 +1,5 @@
 :rotating_light: **Le projet a déménagé vers une instance git auto-hébergée !**<br/>
-:rotating_light: **Veuillez utiliser la nouvelle URL pour une version à jour:** https://code.apps.glenux.net/glenux/makefiles-forever
+:rotating_light: **Veuillez utiliser la nouvelle URL pour une version à jour:** https://code.apps.glenux.net/glenux/cryptaffinity
 
 # CryptAffinity
 
